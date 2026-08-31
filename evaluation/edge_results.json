@@ -1,0 +1,10 @@
+{
+  "_instructions": "Copy this file to edge_results.json (same folder) and fill in real numbers from the app. Latencies: MainActivity screen or BenchmarkActivity's average-of-15-passes numbers. Accuracies: from evaluation_tables.md after running evaluate_20_images.py on the app's exported results.csv. All accuracy values are percentages (0-100), matching evaluation_tables.md's Overall row -- not fractions.",
+  "_source": "Latencies: real iPhone benchmark run via the web app's Benchmark tab (v25), 15/15 passes completed, no timeout -- unchanged by the photo re-evaluation below. Accuracies: real iPhone Evaluate-mode run on the final 20-photo set (evaluation/results.csv, evaluation/labels_final_20.csv), replacing the earlier 21-photo run (archived as evaluation/results_21photo_archive.csv).",
+  "face_detect_latency_ms": 576.8,
+  "age_gender_latency_ms": 219.7,
+  "expression_latency_ms": 6394.6,
+  "age_bucket_accuracy_on_20_images": 85.0,
+  "gender_accuracy_on_20_images": 65.0,
+  "expression_accuracy_on_20_images": 60.0
+}

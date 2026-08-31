@@ -1,0 +1,26 @@
+{
+  "tag": "v3_no_beard_aug",
+  "alpha": 0.35,
+  "model_name": "age_gender_model",
+  "beard_augment": false,
+  "epochs": 15,
+  "finetune_epochs": 10,
+  "batch_size": 32,
+  "train_seconds": 1526.0829660892487,
+  "seconds_per_epoch": 61.04331864356995,
+  "test_metrics": {
+    "age_loss": 114.81360626220703,
+    "age_mae": 7.732780933380127,
+    "gender_accuracy": 0.8726275563240051,
+    "gender_loss": 0.30825358629226685,
+    "loss": 0.5966983437538147,
+    "age_bucket_accuracy": 0.9240826655419654
+  },
+  "final_val_metrics": {
+    "val_age_loss": 98.65631103515625,
+    "val_age_mae": 7.4362993240356445,
+    "val_gender_accuracy": 0.8729957938194275,
+    "val_gender_loss": 0.3065158724784851,
+    "val_loss": 0.5522446632385254
+  }
+}

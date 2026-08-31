@@ -1,0 +1,23 @@
+{
+  "tag": "gpu",
+  "epochs": 15,
+  "finetune_epochs": 10,
+  "batch_size": 32,
+  "train_seconds": 1629.3505895137787,
+  "seconds_per_epoch": 65.17402358055115,
+  "test_metrics": {
+    "age_loss": 117.31998443603516,
+    "age_mae": 7.923075199127197,
+    "gender_accuracy": 0.8730493187904358,
+    "gender_loss": 0.3657163977622986,
+    "loss": 0.664322018623352,
+    "age_bucket_accuracy": 0.9253479544495993
+  },
+  "final_val_metrics": {
+    "val_age_loss": 101.95740509033203,
+    "val_age_mae": 7.461807727813721,
+    "val_gender_accuracy": 0.8776371479034424,
+    "val_gender_loss": 0.3634406626224518,
+    "val_loss": 0.6143614649772644
+  }
+}

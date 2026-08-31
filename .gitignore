@@ -1,0 +1,24 @@
+# Python / environment
+.venv/
+__pycache__/
+*.pyc
+
+# Downloaded datasets (large, regenerable via training/prepare_*.py)
+data/
+
+# Training logs (large, reference only, not needed to understand the code)
+training/logs/
+
+# Real personal photos of real people -- not for public distribution.
+# The code that processes them is included; the photos themselves are not.
+# Wildcards used deliberately: the "20 pics for..." folder name contains a
+# garbled/corrupted character on disk that doesn't match as literal text.
+evaluation/photos/
+evaluation/photoszip.zip
+20 pics for*/
+current/
+new pcs/
+pictures/
+
+# Claude Code session/tooling files, not part of the submitted project
+.claude/

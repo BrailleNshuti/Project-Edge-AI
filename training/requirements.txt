@@ -1,0 +1,9 @@
+tensorflow==2.21.0
+numpy==2.5.1
+pillow==12.3.0
+pandas==3.0.3
+scikit-learn
+scipy
+matplotlib
+datasets==5.0.0
+opencv-python-headless<5

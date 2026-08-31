@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edge AI: Age, Gender & Expression</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css?v=4">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Edge AI">
+<meta name="theme-color" content="#E8593E">
+</head>
+<body>
+<header>
+  <span class="eyebrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.4"/></svg>
+    runs entirely on this device
+  </span>
+  <h1>Hey, let's take a <span class="wiggle">look</span> at you</h1>
+  <p class="subtitle">Snap a photo and I'll guess your age, gender, and mood &mdash; no server, no upload, just this browser doing the thinking.</p>
+</header>
+
+<nav id="tabs">
+  <button class="tab-btn active" data-tab="analyze">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8a2 2 0 0 1 2-2h1.2l.9-1.5A2 2 0 0 1 9.8 3.6h4.4a2 2 0 0 1 1.7.9L16.8 6H18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><circle cx="12" cy="13" r="3.4"/></svg>
+    Analyze
+  </button>
+  <button class="tab-btn" data-tab="benchmark">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 13 15 9.5"/><path d="M9 3h6"/></svg>
+    Benchmark
+  </button>
+  <button class="tab-btn" data-tab="evaluate">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12.5 11 14.5 15.5 10"/></svg>
+    Evaluate
+  </button>
+</nav>
+
+<main>
+  <section id="tab-analyze" class="tab-panel active">
+    <div class="row">
+      <label class="file-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8a2 2 0 0 1 2-2h1.2l.9-1.5A2 2 0 0 1 9.8 3.6h4.4a2 2 0 0 1 1.7.9L16.8 6H18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><circle cx="12" cy="13" r="3.4"/></svg>
+        Take Photo
+        <input type="file" accept="image/*" capture="environment" id="analyzeCameraInput">
+      </label>
+      <label class="file-btn secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="m5 16 4.2-4.5a1.4 1.4 0 0 1 2 0L15 15.5"/><path d="m13.8 14.3 1.2-1.3a1.4 1.4 0 0 1 2 0L19.5 15.5"/><circle cx="8.3" cy="9" r="1.3"/></svg>
+        Choose Photo
+        <input type="file" accept="image/*" id="analyzeFileInput">
+      </label>
+    </div>
+    <div class="polaroid"><img id="analyzePreview" class="preview" hidden></div>
+    <div class="result-wrap"><pre id="analyzeResult" class="result"></pre></div>
+  </section>
+
+  <section id="tab-benchmark" class="tab-panel">
+    <p class="panel-intro">Pick one photo, then run repeated inference passes to measure on-device latency &mdash; this is the "edge device" column of the report's performance table.</p>
+    <div class="row">
+      <label class="file-btn secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="m5 16 4.2-4.5a1.4 1.4 0 0 1 2 0L15 15.5"/><path d="m13.8 14.3 1.2-1.3a1.4 1.4 0 0 1 2 0L19.5 15.5"/><circle cx="8.3" cy="9" r="1.3"/></svg>
+        Choose Photo
+        <input type="file" accept="image/*" id="benchmarkFileInput">
+      </label>
+      <button id="runBenchmarkBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7Z"/></svg>
+        Run 15 passes
+      </button>
+    </div>
+    <div class="polaroid"><img id="benchmarkPreview" class="preview" hidden></div>
+    <div class="result-wrap"><pre id="benchmarkResult" class="result"></pre></div>
+  </section>
+
+  <section id="tab-evaluate" class="tab-panel">
+    <p class="panel-intro">Load your labels file (matching <code>evaluation/LABELING_TEMPLATE.csv</code>) and your 20 photos, matched by filename.</p>
+    <div class="row">
+      <label class="file-btn secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M8.5 12h7M8.5 15.3h7M8.5 8.7h3"/></svg>
+        Labels CSV
+        <input type="file" accept=".csv" id="labelsInput">
+      </label>
+      <label class="file-btn secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="m5 16 4.2-4.5a1.4 1.4 0 0 1 2 0L15 15.5"/><path d="m13.8 14.3 1.2-1.3a1.4 1.4 0 0 1 2 0L19.5 15.5"/><circle cx="8.3" cy="9" r="1.3"/></svg>
+        20 Photos
+        <input type="file" accept="image/*" multiple id="photosInput">
+      </label>
+    </div>
+    <div class="row">
+      <button id="runEvaluateBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5 11 14.5 15.5 10"/><circle cx="12" cy="12" r="9"/></svg>
+        Run Evaluation
+      </button>
+      <a id="downloadResultsLink" hidden download="results.csv">Download results.csv</a>
+    </div>
+    <div class="result-wrap"><pre id="evaluateResult" class="result"></pre></div>
+  </section>
+</main>
+
+<footer>
+  <span class="status-dot loading" id="statusDot"></span>
+  <p id="modelStatus">Loading models&hellip;</p>
+</footer>
+
+<script src="lib/tf.min.js"></script>
+<script src="lib/blazeface.min.js"></script>
+<script src="app.js?v=17"></script>
+</body>
+</html>

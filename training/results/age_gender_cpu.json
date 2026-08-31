@@ -1,0 +1,23 @@
+{
+  "tag": "cpu",
+  "epochs": 15,
+  "finetune_epochs": 10,
+  "batch_size": 32,
+  "train_seconds": 2905.0049703121185,
+  "seconds_per_epoch": 116.20019881248474,
+  "test_metrics": {
+    "age_loss": 108.22492980957031,
+    "age_mae": 7.571568965911865,
+    "gender_accuracy": 0.8679881691932678,
+    "gender_loss": 0.3554772436618805,
+    "loss": 0.6411120891571045,
+    "age_bucket_accuracy": 0.9287220582032898
+  },
+  "final_val_metrics": {
+    "val_age_loss": 97.05850219726562,
+    "val_age_mae": 7.267405986785889,
+    "val_gender_accuracy": 0.8649789094924927,
+    "val_gender_loss": 0.37158656120300293,
+    "val_loss": 0.6246207356452942
+  }
+}

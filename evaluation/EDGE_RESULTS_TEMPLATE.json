@@ -1,0 +1,9 @@
+{
+  "_instructions": "Copy this file to edge_results.json (same folder) and fill in real numbers from the app. Latencies: MainActivity screen or BenchmarkActivity's average-of-50-passes numbers. Accuracies: from evaluation_tables.md after running evaluate_20_images.py on the app's exported results.csv. All accuracy values are percentages (0-100), matching evaluation_tables.md's Overall row -- not fractions.",
+  "face_detect_latency_ms": null,
+  "age_gender_latency_ms": null,
+  "expression_latency_ms": null,
+  "age_bucket_accuracy_on_20_images": null,
+  "gender_accuracy_on_20_images": null,
+  "expression_accuracy_on_20_images": null
+}

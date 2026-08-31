@@ -1,0 +1,94 @@
+{
+  "combinations": {
+    "mobilenet_035": {
+      "plain_accuracy": 0.5778597785977859,
+      "tta_accuracy": 0.5833948339483395
+    },
+    "mobilenet_1.0": {
+      "plain_accuracy": 0.6121771217712177,
+      "tta_accuracy": 0.6166051660516605
+    },
+    "scratch_cnn": {
+      "plain_accuracy": 0.6594095940959409,
+      "tta_accuracy": 0.66309963099631
+    },
+    "mobilenet_035+mobilenet_1.0": {
+      "plain_accuracy": 0.6280442804428045,
+      "tta_accuracy": 0.6309963099630996
+    },
+    "mobilenet_035+scratch_cnn": {
+      "plain_accuracy": 0.6490774907749077,
+      "tta_accuracy": 0.6571955719557195
+    },
+    "mobilenet_1.0+scratch_cnn": {
+      "plain_accuracy": 0.6583025830258302,
+      "tta_accuracy": 0.6634686346863469
+    },
+    "mobilenet_035+mobilenet_1.0+scratch_cnn": {
+      "plain_accuracy": 0.6597785977859778,
+      "tta_accuracy": 0.6667896678966789
+    }
+  },
+  "best": {
+    "label": "mobilenet_035+mobilenet_1.0+scratch_cnn (with TTA)",
+    "accuracy": 0.6667896678966789
+  },
+  "best_confusion_matrix": [
+    [
+      213,
+      39,
+      15,
+      50,
+      9,
+      42
+    ],
+    [
+      45,
+      176,
+      10,
+      86,
+      43,
+      32
+    ],
+    [
+      15,
+      7,
+      599,
+      24,
+      12,
+      47
+    ],
+    [
+      43,
+      51,
+      10,
+      284,
+      3,
+      80
+    ],
+    [
+      8,
+      25,
+      18,
+      9,
+      231,
+      15
+    ],
+    [
+      23,
+      16,
+      33,
+      89,
+      4,
+      304
+    ]
+  ],
+  "labels": [
+    "Angry",
+    "Fear",
+    "Happy",
+    "Sad",
+    "Surprise",
+    "Neutral"
+  ]
+}

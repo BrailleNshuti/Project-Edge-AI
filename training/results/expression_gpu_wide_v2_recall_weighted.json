@@ -1,0 +1,28 @@
+{
+  "tag": "gpu_wide_v2_recall_weighted",
+  "alpha": 1.0,
+  "model_name": "expression_model_wide",
+  "epochs": 15,
+  "finetune_epochs": 20,
+  "fine_tune_layers": "all",
+  "batch_size": 32,
+  "train_seconds": 779.0976040363312,
+  "seconds_per_epoch": 22.259931543895178,
+  "test_metrics": {
+    "accuracy": 0.6121771335601807,
+    "loss": 1.3270329236984253
+  },
+  "final_val_metrics": {
+    "val_accuracy": 0.6101882457733154,
+    "val_loss": 1.4708302021026611
+  },
+  "best_val_accuracy": 0.6127722263336182,
+  "labels": [
+    "Angry",
+    "Fear",
+    "Happy",
+    "Sad",
+    "Surprise",
+    "Neutral"
+  ]
+}

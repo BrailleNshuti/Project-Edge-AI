@@ -1,0 +1,22 @@
+{
+  "tag": "gpu",
+  "approach": "from_scratch_cnn_48x48_grayscale",
+  "epochs_requested": 100,
+  "epochs_run": 78,
+  "batch_size": 64,
+  "train_seconds": 1009.5261919498444,
+  "seconds_per_epoch": 12.942643486536467,
+  "test_metrics": {
+    "accuracy": 0.6723247170448303,
+    "loss": 0.9506517648696899
+  },
+  "best_val_accuracy": 0.6633443832397461,
+  "labels": [
+    "Angry",
+    "Fear",
+    "Happy",
+    "Sad",
+    "Surprise",
+    "Neutral"
+  ]
+}

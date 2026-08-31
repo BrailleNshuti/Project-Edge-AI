@@ -1,0 +1,28 @@
+{
+  "tag": "gpu",
+  "alpha": 0.35,
+  "model_name": "expression_model",
+  "epochs": 20,
+  "finetune_epochs": 20,
+  "fine_tune_layers": "all",
+  "batch_size": 32,
+  "train_seconds": 626.0281841754913,
+  "seconds_per_epoch": 15.650704604387283,
+  "test_metrics": {
+    "accuracy": 0.5597785711288452,
+    "loss": 1.2135008573532104
+  },
+  "final_val_metrics": {
+    "val_accuracy": 0.5762273669242859,
+    "val_loss": 1.1965473890304565
+  },
+  "best_val_accuracy": 0.5806570649147034,
+  "labels": [
+    "Angry",
+    "Fear",
+    "Happy",
+    "Sad",
+    "Surprise",
+    "Neutral"
+  ]
+}

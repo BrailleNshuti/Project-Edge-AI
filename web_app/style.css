@@ -1,0 +1,287 @@
+:root {
+  /* Fixed to the light/cream palette regardless of the device's system theme --
+     chosen deliberately after a user found the dark-mode variant looked muted and
+     washed-out on a real device (iOS Dark Mode) rather than crisp, and preferred a
+     single, consistent look over fixing the dark palette. */
+  color-scheme: light;
+  --bg: #FBF3E6;
+  --bg-grain: rgba(43, 33, 26, 0.035);
+  --fg: #2B211A;
+  --muted: #8A7A6B;
+  --accent: #E8593E;
+  --accent-ink: #ffffff;
+  --accent2: #E8A93D;
+  --good: #4C7A50;
+  --border: #E4D6C3;
+  --panel: #FFFBF3;
+  --paper-shadow: rgba(90, 62, 33, 0.14);
+  --tape: #F4E0A8;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, "Segoe UI", system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(var(--bg-grain) 1px, transparent 1px),
+    radial-gradient(var(--bg-grain) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  color: var(--fg);
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 0 1.1rem 3rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- header ---------- */
+header {
+  padding: 1.6rem 0 1.1rem;
+  position: relative;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+  margin-bottom: 0.6rem;
+}
+.eyebrow svg { width: 12px; height: 12px; }
+
+h1 {
+  font-family: Georgia, "Iowan Old Style", ui-serif, serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+h1 .wiggle {
+  display: inline-block;
+  transform: rotate(-3deg);
+  color: var(--accent);
+}
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 46ch;
+}
+
+/* ---------- tabs: styled like ticket stubs ---------- */
+#tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.4rem 0 1.2rem;
+  position: sticky;
+  top: 0.6rem;
+  z-index: 5;
+}
+.tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.4rem;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  box-shadow: 0 2px 0 var(--border);
+}
+.tab-btn:nth-child(1) { transform: rotate(-1.2deg); }
+.tab-btn:nth-child(2) { transform: rotate(0.8deg); }
+.tab-btn:nth-child(3) { transform: rotate(-0.6deg); }
+.tab-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+.tab-btn.active {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: rotate(0deg) translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 60%, black);
+}
+.tab-btn:active { transform: translateY(1px) scale(0.98); }
+
+.tab-panel { display: none; animation: riseIn 0.25s ease; }
+.tab-panel.active { display: block; }
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-intro {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.9rem;
+  line-height: 1.5;
+}
+.panel-intro code {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+}
+
+/* ---------- action row / buttons ---------- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.file-btn, button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  padding: 0.68rem 1.15rem;
+  border-radius: 16px 10px 16px 10px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--accent) 55%, black), 0 6px 14px var(--paper-shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+.file-btn svg, button svg { width: 16px; height: 16px; flex-shrink: 0; }
+.file-btn input { display: none; }
+
+.file-btn:active, button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 55%, black), 0 2px 6px var(--paper-shadow);
+}
+
+button.secondary, .file-btn.secondary {
+  background: var(--panel);
+  color: var(--fg);
+  border: 2px solid var(--border);
+  box-shadow: 0 3px 0 var(--border);
+}
+button.secondary:active, .file-btn.secondary:active { box-shadow: 0 1px 0 var(--border); }
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ---------- polaroid-style preview ---------- */
+.polaroid {
+  display: inline-block;
+  background: #fffdf9;
+  padding: 0.6rem 0.6rem 1.6rem;
+  border-radius: 3px;
+  box-shadow: 0 10px 22px var(--paper-shadow), 0 2px 4px var(--paper-shadow);
+  transform: rotate(-1.6deg);
+  margin: 0.3rem 0 1.1rem;
+  max-width: 100%;
+  position: relative;
+}
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 46px;
+  height: 20px;
+  background: var(--tape);
+  opacity: 0.85;
+  box-shadow: 0 1px 2px var(--paper-shadow);
+}
+.preview {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  border-radius: 1px;
+}
+.polaroid[hidden] { display: none; }
+.polaroid:has(img[hidden]) { display: none; }
+
+/* ---------- result: receipt / ticket style ---------- */
+.result-wrap { position: relative; }
+.result {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  min-height: 2.2rem;
+  color: var(--fg);
+}
+.result:empty::before {
+  content: "Waiting for a photo\2026";
+  color: var(--muted);
+  font-family: ui-rounded, -apple-system, sans-serif;
+  font-style: italic;
+}
+
+#downloadResultsLink {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px dashed var(--accent);
+  padding-bottom: 1px;
+}
+
+/* ---------- footer / model status ---------- */
+footer {
+  margin-top: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--good);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--good) 20%, transparent);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+/* Reflects real model-loading state -- previously always green even while still
+   loading or after a load failure, which was silently wrong in exactly the cases
+   where the dot's color matters most. */
+.status-dot.loading {
+  background: var(--accent2);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent2) 20%, transparent);
+  animation: statusPulse 1.4s ease-in-out infinite;
+}
+.status-dot.error {
+  background: #C0392B;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.2);
+  animation: none;
+}
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

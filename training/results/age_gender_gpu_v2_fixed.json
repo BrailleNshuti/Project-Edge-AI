@@ -1,0 +1,25 @@
+{
+  "tag": "gpu_v2_fixed",
+  "alpha": 0.35,
+  "model_name": "age_gender_model",
+  "epochs": 15,
+  "finetune_epochs": 10,
+  "batch_size": 32,
+  "train_seconds": 289.10269236564636,
+  "seconds_per_epoch": 11.564107694625854,
+  "test_metrics": {
+    "age_loss": 114.81907653808594,
+    "age_mae": 7.682162284851074,
+    "gender_accuracy": 0.8751581907272339,
+    "gender_loss": 0.29439565539360046,
+    "loss": 0.5827513933181763,
+    "age_bucket_accuracy": 0.9257697174188106
+  },
+  "final_val_metrics": {
+    "val_age_loss": 100.60922241210938,
+    "val_age_mae": 7.386409759521484,
+    "val_gender_accuracy": 0.8670886158943176,
+    "val_gender_loss": 0.3028303384780884,
+    "val_loss": 0.5558440089225769
+  }
+}

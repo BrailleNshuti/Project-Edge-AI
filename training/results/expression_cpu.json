@@ -1,0 +1,26 @@
+{
+  "tag": "cpu",
+  "epochs": 20,
+  "finetune_epochs": 25,
+  "fine_tune_layers": "all",
+  "batch_size": 32,
+  "train_seconds": 7833.920796632767,
+  "seconds_per_epoch": 174.0871288140615,
+  "test_metrics": {
+    "accuracy": 0.5778597593307495,
+    "loss": 1.2248806953430176
+  },
+  "final_val_metrics": {
+    "val_accuracy": 0.5802879333496094,
+    "val_loss": 1.196050763130188
+  },
+  "best_val_accuracy": 0.5902547240257263,
+  "labels": [
+    "Angry",
+    "Fear",
+    "Happy",
+    "Sad",
+    "Surprise",
+    "Neutral"
+  ]
+}
