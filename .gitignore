@@ -33,6 +33,9 @@ android_app/local.properties
 # Personal dev-process working notes, not part of the submission -- kept locally only
 NEXT_STEPS.md
 
+# Submitted directly via myCampus, not the public repo
+Project_Report.docx
+
 # Regenerable model-conversion bridges (see training/resave_legacy_keras.py --help) and
 # rejected experimental model versions (see README's age-bias Design note for why they
 # were rejected) -- not needed to reproduce or run anything, only the canonical .keras
