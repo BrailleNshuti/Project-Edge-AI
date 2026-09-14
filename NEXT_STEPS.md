@@ -2,10 +2,10 @@
 
 Everything that required your Google account, your phone, and real photographed faces is
 now done: the GPU notebook has been run, the app has been benchmarked and evaluated on
-your real iPhone, and the results are in the report. Of the four real-world actions that
-originally required you personally, three are complete (Steps 1-3 below); the only one
-left is Step 4, personalizing the report. This document walks through what was done for
-each of the first three, and exactly what's left to do for the fourth.
+your real iPhone, and the results are in the report. All four of the real-world actions
+that originally required you personally are complete (Steps 1-4 below). The only thing
+left, at all, is pushing the code to GitHub -- see the final section. This document walks
+through what was done for each step, and what that last action involves.
 
 Steps below are numbered in the order they were done — later steps depended on earlier
 ones being done first.
@@ -18,12 +18,15 @@ ones being done first.
 | 1d | ~~Run Colab notebook Parts 4-5~~ — **done, both tested and not deployed** | Two honest negative results — see below |
 | 2 | ~~Benchmark on your iPhone~~ — **done** | Table 1's "On edge device" latency rows |
 | 3 | ~~Take + label photos, run Evaluate~~ — **done, real results in** | Table 1's edge accuracy cells, Table 2 |
-| 4 | Personalize the report | Title page, AI disclosure, discussion, references |
+| 4 | ~~Personalize the report~~ — **done** | Title page, AI disclosure (both filled in by you), discussion, references |
 | — | ~~Full report audit against the real brief + folder cleanup~~ — **done** | Fixed 2 internal contradictions + 1 overclaim; ~400MB debris removed |
 | — | ~~Cross-document consistency + citation compliance audit~~ — **done** | Fixed stale README/NEXT_STEPS sections, missing citation page numbers, one reference-formatting bug |
-| — | ~~Restructured report to the official 7-10 page format~~ — **done** | Was ~19-20 pages with no abstract/figures; now ~7-9 pages with a graphical abstract and architecture diagram, matching IU's required structure |
+| — | ~~Restructured report to the official 7-10 page format~~ — **done** | Was ~19-20 pages with no abstract/figures; now 8 pages of main body with a graphical abstract and architecture diagram, matching IU's required structure |
 | — | ~~Re-collected and re-evaluated the demographic set (Round 2)~~ — **done** | Dropped 2 face-detection failures, added 1 confirmed-real elderly photo, landed on a clean 20-photo set; re-ran on the real iPhone, Table 1/2 and the graphical abstract all updated with the real Round 2 numbers |
 | — | ~~Deep root-cause investigation into the gender-accuracy gap~~ — **done** | Tested 5 hypotheses with real statistics; 4 ruled out (ethnicity, general quality, crop-detector, sharpness), 1 confirmed (facial hair, unresolved); written into report Section 3 |
+| — | ~~Front/body/back-matter page numbering~~ — **done** | Three real Word sections: title page + TOC + Abstract in lowercase Roman (i-iii), Introduction through Declaration of AI Tool Use in Arabic (1-8), References through Appendix B continuing the Roman sequence (iv onward) |
+| — | ~~Final accuracy + formatting review pass~~ — **done** | 27 issues found and fixed across the report — see "Final review pass" below |
+| — | Push the code to GitHub | The link already in the report (Results section, Appendix A) — repo exists but is currently empty; see "One thing left" below |
 
 ---
 
@@ -203,8 +206,8 @@ These are written into `evaluation/edge_results.json` and already in
 Expression is the dominant cost by far, consistent with what CPU-backend testing showed
 earlier -- it runs 2 models with test-time augmentation each (4 forward passes) rather
 than 1, which is what pushed its accuracy from 58% to 67.6% (Step 1). Table 1's edge
-*accuracy* cells (age bucket, gender, expression) are still `[pending device test]` --
-those come from Step 3's 20-photo evaluation, not this benchmark.
+*accuracy* cells (age bucket, gender, expression) come from Step 3's 20-photo evaluation
+below, and are filled in too -- nothing in Table 1 is still pending.
 
 ---
 
@@ -257,7 +260,7 @@ the real Round 2 numbers.
 
 ---
 
-## Step 4 — Personalize the report
+## Step 4 — Personalize the report — done ✓
 
 The report was restructured since the last version of this document: the official IU
 course page (not just the task brief) turned out to require a 7-10 page report with a
@@ -266,49 +269,80 @@ review, method with a diagram, results analysis, conclusion, references, appendi
 code -- and the report was roughly 19-20 pages against that limit, with no abstract and
 no images at all. It's now been rebuilt around that exact structure (Abstract, 1.
 Introduction and Related Work, 2. Method, 3. Results and Analysis, 4. Conclusion, 5.
-Declaration of AI Tool Use, References, Appendix A, Appendix B), cut to about 3,000 words
-of body text (roughly 7-9 pages including the two new figures), with two new diagrams
-added (a graphical abstract and a system architecture diagram, both captioned "Fig. N /
-Own representation" per the citation guidelines) and a citation for the Goodfellow et al.
-(2016) *Deep Learning* textbook added, since IU's own course page recommends it as further
-reading and it wasn't cited anywhere before. All the real numbers, the gender-accuracy
-finding, the beard-bias investigation, and the honest negative results are still in the
-report -- condensed, not removed.
+Declaration of AI Tool Use, References, Appendix A, Appendix B), with two diagrams (a
+graphical abstract and a system architecture diagram, both captioned "Fig. N / Own
+representation" per the citation guidelines) and a citation for the Goodfellow et al.
+(2016) *Deep Learning* textbook, since IU's own course page recommends it as further
+reading. All the real numbers, the gender-accuracy finding, the beard-bias investigation,
+and the honest negative results are in the report -- condensed, not removed. The main
+body (Introduction through Declaration of AI Tool Use) is 8 pages.
 
-Open `Project_Report.docx` in Word. There are **3 shaded ✎ callout boxes left**, plus the
-title page:
+All of the report's personalization is done, in your own words:
 
-1. **Title page** — replace `[Your Full Name]`, `[Your Matriculation Number]`, and
-   `[Date]` with your real details.
-2. **AI-disclosure callout** (Section 5) — this is the most important one to check
-   carefully. It currently states AI assistance was used for scaffolding code, drafting
-   scripts, and report structure. **Read it and adjust it to accurately reflect what you
-   actually did** — IU's academic integrity policy requires the disclosure to be true, not
-   just present.
-3. **Reference-list callout** (right after References) — add a citation for the BlazeFace
-   paper (Bazarevsky et al., 2019) only if you expand the face-detection discussion beyond
-   what's already drafted; otherwise no action needed. (Buolamwini & Gebru's 2018 "Gender
-   Shades" study, cited in Section 3's discussion of the gender-accuracy gap, and the
-   Goodfellow et al. 2016 textbook, cited in Section 1, have already been added to the
-   reference list for you.)
-4. **Gantt chart callout** (Appendix B, optional) — swap the relative week numbers for
-   real calendar dates if you want a dated timeline instead of "Week 1, Week 2...".
+1. **Title page** — filled in with your real name, matriculation number, course tutor,
+   and submission date.
+2. **AI-disclosure** (Section 5) — you've written your own account of what AI assistance
+   was and wasn't used for.
+3. **Reference list** — Buolamwini & Gebru's 2018 "Gender Shades" study (Section 3's
+   gender-accuracy-gap discussion) and the Goodfellow et al. 2016 textbook (Section 1) are
+   both in the reference list.
+4. **Gantt chart** (Appendix B) — uses relative week numbers (W1-W6), which is fine as
+   submitted; swap in real calendar dates only if you specifically want a dated timeline.
 
-The standalone "Discuss and personalize" callout that used to sit in the old Discussion
-section is gone -- the factual comparison it asked for (GPU vs. CPU accuracy, the
-67.60% ensemble result, the full gender-accuracy-gap analysis) is now written directly
-into Section 3 (Results and Analysis) as part of the condensed report. If you want to add
-a sentence of your own personal reflection alongside that analysis, you're welcome to, but
-it's no longer a required callout.
-
-Everything else in the report (method, results, limitations folded into the conclusion,
-literature) is already complete and doesn't need editing unless you want to adjust the
-phrasing to sound more like your own voice.
+You also substantially rewrote much of the body text yourself, in a more personal,
+first-person voice -- that rewrite is what the final review pass below checked and fixed.
 
 ---
 
-## Once all four are done
+## Page numbering — done ✓
 
-Tell me, and I'll do a final pass: re-check the report for the same kind of
-copy/formatting bugs I found and fixed before (e.g. the concatenated-percentage cell), and
-confirm every ✎ box and `[pending]` placeholder is actually resolved before you submit.
+`Project_Report.docx` now has three real Word sections, each with its own page-number
+format:
+
+| Section | Content | Format |
+|---|---|---|
+| 1 | Title page → end of Abstract | lowercase Roman, starts at **i** |
+| 2 | Introduction → end of Declaration of AI Tool Use | Arabic, starts at **1** |
+| 3 | References → Appendix B | lowercase Roman, continues the front-matter sequence (starts at **iv**) |
+
+The footer's page-number field was also trimmed from "Page X of Y" down to just the bare
+number, since it's redundant with the front-matter/body/back-matter numbers being visibly
+different formats already. If you ever add or remove content near a section boundary
+(end of Abstract, end of Declaration of AI Tool Use), reopen the doc, press **Ctrl+A then
+F9** to refresh the fields, and check the Table of Contents' page numbers and the
+back-matter's Roman start value (currently `iv`, assuming the front matter is exactly 3
+pages) still look right.
+
+---
+
+## Final review pass — done ✓
+
+After you personalized the report yourself, a full line-by-line review found 27 issues
+and all were fixed directly in the document: wrong numbers that contradicted the report's
+own tables (the Abstract said "3 collected women's faces" when Table 1 says 9; a Results
+sentence said the female accuracy was "not more than 10%" when it's 33.3%, stated
+correctly two paragraphs earlier), a wrong FER2013 image resolution (was "1,008x1,008px",
+corrected to the real 48x48 matching the project's own `prepare_fer2013.py`), a
+contradiction about which classifier uses MobileNetV2, several garbled/fused words left
+over from pasting text in ("wasaniPhone", "noMacfor"), missing citation years, a dozen
+numbers with a stray space after the thousands comma ("23, 705" → "23,705"), and some
+structural cleanup (a stray leftover "END" paragraph deleted, an oversized gap between
+paragraphs trimmed, a missing table caption added). Full itemized list was given to you
+in chat before the fixes were applied. Wording changes stayed close to the original
+phrasing throughout -- corrected facts and grammar, not rewritten style.
+
+---
+
+## One thing left: push to GitHub
+
+The report cites `https://github.com/BrailleNshuti/Project-Edge-AI` twice (Results
+section and Appendix A). The remote is configured and the local repo has an initial
+commit, but the repo on GitHub itself is currently **empty** -- nothing has been pushed
+yet, so the link doesn't resolve to anything right now. Before submitting:
+
+```
+git push -u origin main
+```
+
+Once that's done, everything in this document and in `Project_Report.docx` is complete
+and consistent.

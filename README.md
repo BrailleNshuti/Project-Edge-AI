@@ -17,20 +17,25 @@ included) from before the platform was known to be an iPhone. It's kept as a wor
 alternative in case a real Android device ever becomes available, but it is **not**
 the path to use with an iPhone -- an `.apk` cannot run on iOS at all.
 
-**`Project_Report.docx`** -- a full draft of the actual report you submit, restructured to
-match the official IU course page's required format: a textual + graphical abstract,
+**`Project_Report.docx`** -- the actual report you submit, restructured to match the
+official IU course page's required format: a textual + graphical abstract,
 introduction/literature review, method (with an architecture diagram), results analysis,
-conclusion, references, and a source-code appendix -- about 7-9 pages including both
-figures, within the course page's 7-10 page limit (it was ~19-20 pages before this pass,
-with no abstract or images at all). Both result tables are fully filled in with real,
-real numbers (GPU training, iPhone benchmark, and the 20-photo demographic
-evaluation are all done -- see NEXT_STEPS.md Steps 1-3). What's left is a handful of ✎
-callout boxes you must personalize yourself: the AI-tool disclosure and the title page.
-Do not submit it as-is.
+conclusion, references, and a source-code appendix -- the main body (Introduction through
+Declaration of AI Tool Use) is 8 pages, within the course page's 7-10 page limit (it was
+~19-20 pages before this pass, with no abstract or images at all). Both result tables are
+fully filled in with real numbers (GPU training, iPhone benchmark, and the 20-photo
+demographic evaluation are all done -- see NEXT_STEPS.md Steps 1-3), the title page and
+AI-tool disclosure are personalized, and the document now uses proper front-matter
+(lowercase Roman) / body (Arabic, starting at 1) / back-matter (Roman, continuing the
+front matter) page numbering across three real Word sections. A full accuracy and
+formatting review pass has also been done -- see NEXT_STEPS.md's final section for what
+was fixed. The one thing still outstanding is pushing the code to GitHub so the link
+already in the report (Results section and Appendix A) actually resolves to something --
+see that same final section.
 
 **[NEXT_STEPS.md](NEXT_STEPS.md)** -- the detailed, step-by-step guide for what's left.
-Steps 1-3 (GPU notebook, iPhone benchmark, 20-photo evaluation) are all done; only
-Step 4, personalizing the report, remains. Start there.
+Steps 1-4 (GPU notebook, iPhone benchmark, 20-photo evaluation, personalizing the report)
+are all done; the only remaining action is pushing to GitHub. Start there.
 
 ## What's here
 

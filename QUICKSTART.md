@@ -73,6 +73,6 @@ Go back to the laptop's PowerShell window and press `Ctrl + C` to stop the serve
   app what the current version should be.
 - Full technical details and the rest of the project (training, evaluation, report
   requirements): see the main [README.md](README.md).
-- The actual report you'll submit is drafted for you at `Project_Report.docx` in the
-  project root -- open it in Word and look for the ✎ boxes marking what you still need
-  to fill in or personalize.
+- The actual report you'll submit is at `Project_Report.docx` in the project root --
+  fully personalized and reviewed. See [NEXT_STEPS.md](NEXT_STEPS.md)'s last section for
+  the one thing still left to do (pushing the code to GitHub) before you submit.

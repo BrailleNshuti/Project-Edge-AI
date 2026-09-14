@@ -22,3 +22,15 @@ pictures/
 
 # Claude Code session/tooling files, not part of the submitted project
 .claude/
+
+# Word lock/temp files
+~$*.docx
+~WRL*.tmp
+
+# Regenerable model-conversion bridges (see training/resave_legacy_keras.py --help) and
+# rejected experimental model versions (see README's age-bias Design note for why they
+# were rejected) -- not needed to reproduce or run anything, only the canonical .keras
+# files and the already-converted web_app/ and android_app/ artifacts are.
+training/saved_models/*_legacy.h5
+training/saved_models/*_weights.npz
+training/saved_models/age_gender_model_V2_WITH_BEARD_AUG.keras
