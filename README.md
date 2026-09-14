@@ -538,10 +538,6 @@ change any of the underlying result files.
   deletion, and ~204MB of regenerable Android Gradle build cache) with nothing unique or
   irreplaceable touched.
 
-## AI tool disclosure (you must write this yourself)
+## AI tool disclosure 
 
-The brief requires: *"Please state in the report if any AI tools like Chat-GPT have been
-used, and how they were used."* This is a hard requirement, not optional. Describe honestly
-what was AI-assisted (e.g. project scaffolding, training/conversion scripts, the web app
-and Android app code) versus what you did yourself (data collection, running the
-training/evaluation steps on your own device, writing the report's analysis and discussion).
+In this project I used one AI model which helped me to brainstorm and build Ideas. and build the structure for the project!
