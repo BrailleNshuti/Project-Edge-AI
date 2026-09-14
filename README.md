@@ -17,24 +17,16 @@ included) from before the platform was known to be an iPhone. It's kept as a wor
 alternative in case a real Android device ever becomes available, but it is **not**
 the path to use with an iPhone -- an `.apk` cannot run on iOS at all.
 
-**`Project_Report.docx`** -- the actual report you submit, restructured to match the
+**`Project_Report.docx`** -- the actual report submitted, restructured to match the
 official IU course page's required format: a textual + graphical abstract,
 introduction/literature review, method (with an architecture diagram), results analysis,
 conclusion, references, and a source-code appendix -- the main body (Introduction through
-Declaration of AI Tool Use) is 8 pages, within the course page's 7-10 page limit (it was
-~19-20 pages before this pass, with no abstract or images at all). Both result tables are
-fully filled in with real numbers (GPU training, iPhone benchmark, and the 20-photo
-demographic evaluation are all done -- see NEXT_STEPS.md Steps 1-3), the title page and
-AI-tool disclosure are personalized, and the document now uses proper front-matter
-(lowercase Roman) / body (Arabic, starting at 1) / back-matter (Roman, continuing the
-front matter) page numbering across three real Word sections. A full accuracy and
-formatting review pass has also been done -- see NEXT_STEPS.md's final section for what
-was fixed. Everything, including the GitHub push, is done -- see NEXT_STEPS.md's last
-section for the full close-out summary.
-
-**[NEXT_STEPS.md](NEXT_STEPS.md)** -- the detailed, step-by-step guide for what was done.
-Steps 1-4 (GPU notebook, iPhone benchmark, 20-photo evaluation, personalizing the report),
-the final review pass, and the GitHub push are all done. Nothing is outstanding.
+Declaration of AI Tool Use) is 8 pages, within the course page's 7-10 page limit. Both
+result tables are fully filled in with real numbers (GPU training, iPhone benchmark, and
+the 20-photo demographic evaluation, all described in the numbered sections below), the
+title page and AI-tool disclosure are personalized, and the document uses proper
+front-matter (lowercase Roman) / body (Arabic, starting at 1) / back-matter (Roman,
+continuing the front matter) page numbering across three real Word sections.
 
 ## What's here
 
@@ -181,9 +173,9 @@ real UTKFace test photo (true age 100, female) came back as age 92.99, Female, w
 full pipeline (face detection + age/gender + the 2-model expression ensemble) running end
 to end with no errors and realistic steady-state latency (~800ms for expression, measured
 on WebGL during development). **This has since actually been run on the real iPhone** --
-see Section 4 below and NEXT_STEPS.md Step 2 for the real on-device numbers, which are
-notably higher than the WebGL figure above because the app forces the CPU backend in
-production (see the Design notes' WebGL-precision entry for why).
+see Section 4 below for the real on-device numbers, which are notably higher than the
+WebGL figure above because the app forces the CPU backend in production (see the Design
+notes' WebGL-precision entry for why).
 
 ## 4. Collect and evaluate real photos -- done, real results in
 
@@ -203,8 +195,7 @@ labels CSV and matched exactly, confirming the run used the correct photos and l
 This is the second independent real-device evaluation round for this project -- an
 earlier 21-photo round (archived as `evaluation/results_21photo_archive.csv`) found a
 similar pattern with different numbers, which is discussed below. The real, current
-numbers (also in `evaluation_tables.md`, `Project_Report.docx` Table 2, and
-NEXT_STEPS.md Step 3):
+numbers (also in `evaluation_tables.md` and `Project_Report.docx` Table 2):
 
 | Metric | Overall | Detail |
 |---|---|---|
@@ -215,8 +206,7 @@ NEXT_STEPS.md Step 3):
 The gender gap is the headline finding, discussed in depth in the report's Section 3
 (Discussion) and the Design notes below. The web app's **Benchmark** tab (Run 15 passes,
 real device, not a desktop browser -- that's what the brief asks you to measure) was also
-run on the real iPhone; see Section 3 above and NEXT_STEPS.md Step 2 for those latency
-numbers.
+run on the real iPhone; see Section 3 above for those latency numbers.
 
 **Anonymized in the report**: no identifiable photos of real people appear in
 `Project_Report.docx` itself -- only the aggregate numbers/tables above, per the brief's

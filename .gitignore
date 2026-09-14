@@ -30,6 +30,9 @@ pictures/
 # Machine-specific Android SDK path, not portable to another machine
 android_app/local.properties
 
+# Personal dev-process working notes, not part of the submission -- kept locally only
+NEXT_STEPS.md
+
 # Regenerable model-conversion bridges (see training/resave_legacy_keras.py --help) and
 # rejected experimental model versions (see README's age-bias Design note for why they
 # were rejected) -- not needed to reproduce or run anything, only the canonical .keras

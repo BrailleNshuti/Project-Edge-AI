@@ -74,5 +74,4 @@ Go back to the laptop's PowerShell window and press `Ctrl + C` to stop the serve
 - Full technical details and the rest of the project (training, evaluation, report
   requirements): see the main [README.md](README.md).
 - The actual report you'll submit is at `Project_Report.docx` in the project root --
-  fully personalized and reviewed. The code is also pushed and live on GitHub. See
-  [NEXT_STEPS.md](NEXT_STEPS.md) for the full close-out summary -- nothing is left.
+  fully personalized and reviewed. The code is also pushed and live on GitHub.
