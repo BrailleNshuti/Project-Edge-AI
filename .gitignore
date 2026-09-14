@@ -27,6 +27,9 @@ pictures/
 ~$*.docx
 ~WRL*.tmp
 
+# Machine-specific Android SDK path, not portable to another machine
+android_app/local.properties
+
 # Regenerable model-conversion bridges (see training/resave_legacy_keras.py --help) and
 # rejected experimental model versions (see README's age-bias Design note for why they
 # were rejected) -- not needed to reproduce or run anything, only the canonical .keras
