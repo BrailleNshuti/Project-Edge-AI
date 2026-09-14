@@ -69,10 +69,10 @@ Go back to the laptop's PowerShell window and press `Ctrl + C` to stop the serve
   once. You should only need to do this once; the underlying bug is fixed, so future
   updates should show up on a normal reload from here on. If you ever want to double-check
   you're on the latest version without guessing, the "Models loaded" line at the bottom
-  of the Analyze tab now shows a version tag (e.g. "v16") -- ask whoever's updating the
+  of the Analyze tab now shows a version tag (currently "v27") -- ask whoever's updating the
   app what the current version should be.
 - Full technical details and the rest of the project (training, evaluation, report
   requirements): see the main [README.md](README.md).
 - The actual report you'll submit is at `Project_Report.docx` in the project root --
-  fully personalized and reviewed. See [NEXT_STEPS.md](NEXT_STEPS.md)'s last section for
-  the one thing still left to do (pushing the code to GitHub) before you submit.
+  fully personalized and reviewed. The code is also pushed and live on GitHub. See
+  [NEXT_STEPS.md](NEXT_STEPS.md) for the full close-out summary -- nothing is left.

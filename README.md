@@ -29,13 +29,12 @@ AI-tool disclosure are personalized, and the document now uses proper front-matt
 (lowercase Roman) / body (Arabic, starting at 1) / back-matter (Roman, continuing the
 front matter) page numbering across three real Word sections. A full accuracy and
 formatting review pass has also been done -- see NEXT_STEPS.md's final section for what
-was fixed. The one thing still outstanding is pushing the code to GitHub so the link
-already in the report (Results section and Appendix A) actually resolves to something --
-see that same final section.
+was fixed. Everything, including the GitHub push, is done -- see NEXT_STEPS.md's last
+section for the full close-out summary.
 
-**[NEXT_STEPS.md](NEXT_STEPS.md)** -- the detailed, step-by-step guide for what's left.
-Steps 1-4 (GPU notebook, iPhone benchmark, 20-photo evaluation, personalizing the report)
-are all done; the only remaining action is pushing to GitHub. Start there.
+**[NEXT_STEPS.md](NEXT_STEPS.md)** -- the detailed, step-by-step guide for what was done.
+Steps 1-4 (GPU notebook, iPhone benchmark, 20-photo evaluation, personalizing the report),
+the final review pass, and the GitHub push are all done. Nothing is outstanding.
 
 ## What's here
 
@@ -43,11 +42,13 @@ are all done; the only remaining action is pushing to GitHub. Start there.
 training/           Python: dataset prep, model training, TFLite + TensorFlow.js conversion
   logs/              Raw training console output (large, reference only)
   results/           Metric JSONs -- feeds Table 1 of the report
-  saved_models/      Trained models (.keras = canonical; .h5/_legacy.h5/_weights.npz
-                      are regenerable conversion bridges, see convert_to_tflite.py --help
-                      and resave_legacy_keras.py --help; a couple of clearly-named
-                      alternate age_gender_model_*.keras files are kept as reference --
-                      see the age-bias Design note below for why)
+  saved_models/      Trained models (.keras = canonical, tracked in git; the
+                      _legacy.h5/_weights.npz conversion bridges and the rejected
+                      beard-augmentation variant are gitignored -- present on disk,
+                      regenerable via convert_to_tflite.py --help and
+                      resave_legacy_keras.py --help, not pushed to GitHub since
+                      they're build output, not source; see the age-bias Design note
+                      below for what the rejected variant was)
   tflite/            Exported .tflite files (secondary Android artifact)
   analyze_age_bias.py  Bias/spurious-cue diagnostic for the age/gender model -- run this
                       after any retrain that touches age_gender_model.keras
@@ -130,8 +131,8 @@ single-photo workflow.
 
 **Still short of the original 70% target** -- 67.60% sits within the published
 human-inter-annotator-agreement range for FER2013 (~65-68%) and near the low end of what
-purpose-built models typically reach (~70-75%). The report's Limitations section (9)
-discusses this honestly rather than overstating it. If you ever want to push further
+purpose-built models typically reach (~70-75%). The report's Section 4 (Conclusion), which
+folds in the limitations discussion, covers this honestly rather than overstating it. If you ever want to push further
 yourself, the notebook and `evaluate_expression_ensemble.py` are reusable as-is -- e.g. to
 try a third differently-biased architecture, more epochs, or FER2013-specific
 augmentation.
@@ -380,7 +381,7 @@ change any of the underlying result files.
   baseline (a strong sign it was stale, not from the actual retrained model) -- caught by
   independently re-running `evaluate_expression_ensemble.py` locally against the
   downloaded `.keras` files themselves rather than trusting the printed/downloaded
-  result. Full numbers in `Project_Report.docx`'s Limitations section.
+  result. Full numbers in `Project_Report.docx`'s Section 4 (Conclusion).
 - **The age model's facial-hair bias (report Section 3) got a third attempt**,
   after real-world testing confirmed it's still present in the deployed (Round 2,
   no-beard-aug) model. Round 3 retried the same counterfactual jaw-darkening

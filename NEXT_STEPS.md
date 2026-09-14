@@ -3,9 +3,9 @@
 Everything that required your Google account, your phone, and real photographed faces is
 now done: the GPU notebook has been run, the app has been benchmarked and evaluated on
 your real iPhone, and the results are in the report. All four of the real-world actions
-that originally required you personally are complete (Steps 1-4 below). The only thing
-left, at all, is pushing the code to GitHub -- see the final section. This document walks
-through what was done for each step, and what that last action involves.
+that originally required you personally are complete (Steps 1-4 below), the report has
+been through a full review pass, and the code is pushed and live on GitHub. Nothing is
+outstanding. This document walks through what was done for each step.
 
 Steps below are numbered in the order they were done — later steps depended on earlier
 ones being done first.
@@ -26,7 +26,7 @@ ones being done first.
 | — | ~~Deep root-cause investigation into the gender-accuracy gap~~ — **done** | Tested 5 hypotheses with real statistics; 4 ruled out (ethnicity, general quality, crop-detector, sharpness), 1 confirmed (facial hair, unresolved); written into report Section 3 |
 | — | ~~Front/body/back-matter page numbering~~ — **done** | Three real Word sections: title page + TOC + Abstract in lowercase Roman (i-iii), Introduction through Declaration of AI Tool Use in Arabic (1-8), References through Appendix B continuing the Roman sequence (iv onward) |
 | — | ~~Final accuracy + formatting review pass~~ — **done** | 27 issues found and fixed across the report — see "Final review pass" below |
-| — | Push the code to GitHub | The link already in the report (Results section, Appendix A) — repo exists but is currently empty; see "One thing left" below |
+| — | ~~Push the code to GitHub~~ — **done** | The link in the report (Results section, Appendix A) now resolves for real; repo also cleaned of build bloat and one broken notebook fixed — see "GitHub: pushed and cleaned up" below |
 
 ---
 
@@ -44,11 +44,11 @@ processed:
   augmentation) that reached **67.60%** test accuracy, up from 58.34% on the CPU-only
   single model. I verified it end-to-end in-browser before confirming this — face
   detection, age/gender, and the new expression ensemble all run correctly.
-- **The report has been updated** — `Project_Report.docx`'s Table 1, the Discussion
-  section (with a new comparison table, Table 3), the Limitations section, and the
-  Conclusion all now reflect the real numbers.
+- **The report has been updated** — `Project_Report.docx`'s Table 1, Section 3 (Results
+  and Analysis, with a new comparison table, Table 3), and Section 4 (Conclusion, which
+  folds in the limitations discussion) all now reflect the real numbers.
 - Still short of the original 70% target (67.60% is honestly reported, not rounded up or
-  overstated) — see the report's Limitations section for why, and what would plausibly
+  overstated) — see the report's Section 4 (Conclusion) for why, and what would plausibly
   close the remaining gap if you wanted to pursue it further.
 
 **One thing to do yourself:** `Project_Report.docx` was open in Word while I updated it.
@@ -63,7 +63,7 @@ changes with the stale version.
 
 You reported a close-up selfie scoring 82.4 years. I investigated deeply, built two
 fixes, and things did not go cleanly — here's exactly what happened, across two rounds.
-Full writeup in the report's Limitations section; reproducible via
+Full writeup in the report's Section 4 (Conclusion); reproducible via
 `training/analyze_age_bias.py` and `training/train_age_gender.py --no-beard-aug`.
 
 **The two fixes I built:**
@@ -141,7 +141,7 @@ what size the coordinates are in. **Verified** against all four of the project's
 test photos (`pictures/uno.jpeg` through `four.jpeg`), through the exact same code path
 the real app uses (not a shortcut) — every one now gets a correctly-placed face crop and
 a confident, correct gender prediction, where every one previously got a wrong, tiny crop.
-Shipped as `v22`. Full technical write-up in the report's Limitations section.
+Shipped as `v22`. Full technical write-up in the report's Section 4 (Conclusion).
 
 **Please re-test on your own phone/laptop once more** (fresh Incognito/private window,
 confirm the status line reads `v22` before testing) — this has been rigorously verified
@@ -179,7 +179,7 @@ original ensemble remains what's actually running in the app.
 
 **Nothing changed in your app** — both currently-deployed models (age/gender and
 expression) are exactly what they were before this round. Both attempts are documented
-with their real numbers in `Project_Report.docx`'s Limitations section, README.md, and
+with their real numbers in `Project_Report.docx`'s Section 4 (Conclusion), README.md, and
 here — an honestly-reported "we tried this specific fix and it didn't work, here's why"
 is legitimate, valuable content for the report, not something to hide. This closes out
 the open accuracy-improvement threads; what's left is Steps 2-4 below, which don't depend
@@ -333,16 +333,22 @@ phrasing throughout -- corrected facts and grammar, not rewritten style.
 
 ---
 
-## One thing left: push to GitHub
+## GitHub: pushed and cleaned up — done ✓
 
 The report cites `https://github.com/BrailleNshuti/Project-Edge-AI` twice (Results
-section and Appendix A). The remote is configured and the local repo has an initial
-commit, but the repo on GitHub itself is currently **empty** -- nothing has been pushed
-yet, so the link doesn't resolve to anything right now. Before submitting:
+section and Appendix A). The repo is pushed and the link resolves for real now. Along
+the way, two more real problems were found and fixed:
 
-```
-git push -u origin main
-```
+- **Repo bloat removed**: `training/saved_models/` was tracking 9 large files it didn't
+  need to -- the rejected beard-augmentation model variant and 8 regenerable
+  `_legacy.h5`/`_weights.npz` conversion bridges (see the `saved_models/` entry above).
+  Untracked via `.gitignore`; still present on your disk, just not pushed. Also untracked
+  `android_app/local.properties` (your local Android SDK path, meaningless on any other
+  machine). Tracked repo size dropped from ~97MB just in `saved_models/` to 73.6MB total.
+- **Fixed a genuinely broken file**: `colab_gpu_training.ipynb` had one code cell missing
+  required fields (`outputs`, `execution_count`), which made GitHub reject the *entire*
+  notebook with "Invalid Notebook" instead of rendering it. This was likely what looked
+  like "the main code can't be opened" -- fixed and verified it renders correctly now.
 
-Once that's done, everything in this document and in `Project_Report.docx` is complete
-and consistent.
+Everything in this document, in `Project_Report.docx`, and on GitHub is complete and
+consistent.
