@@ -6,17 +6,17 @@
   "finetune_epochs": 20,
   "fine_tune_layers": "all",
   "batch_size": 32,
-  "train_seconds": 626.0281841754913,
-  "seconds_per_epoch": 15.650704604387283,
+  "train_seconds": 670.7645020484924,
+  "seconds_per_epoch": 16.76911255121231,
   "test_metrics": {
-    "accuracy": 0.5597785711288452,
-    "loss": 1.2135008573532104
+    "accuracy": 0.5642066597938538,
+    "loss": 1.2221699953079224
   },
   "final_val_metrics": {
-    "val_accuracy": 0.5762273669242859,
-    "val_loss": 1.1965473890304565
+    "val_accuracy": 0.5965300798416138,
+    "val_loss": 1.1913655996322632
   },
-  "best_val_accuracy": 0.5806570649147034,
+  "best_val_accuracy": 0.5965300798416138,
   "labels": [
     "Angry",
     "Fear",

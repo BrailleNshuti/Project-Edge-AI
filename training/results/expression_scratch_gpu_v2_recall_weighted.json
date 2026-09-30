@@ -2,15 +2,15 @@
   "tag": "gpu_v2_recall_weighted",
   "approach": "from_scratch_cnn_48x48_grayscale",
   "epochs_requested": 100,
-  "epochs_run": 52,
+  "epochs_run": 64,
   "batch_size": 64,
-  "train_seconds": 676.041065454483,
-  "seconds_per_epoch": 13.00078972027852,
+  "train_seconds": 848.7889931201935,
+  "seconds_per_epoch": 13.262328017503023,
   "test_metrics": {
-    "accuracy": 0.6594095826148987,
-    "loss": 0.9256520867347717
+    "accuracy": 0.6653136610984802,
+    "loss": 0.9794021248817444
   },
-  "best_val_accuracy": 0.6603912711143494,
+  "best_val_accuracy": 0.6662975549697876,
   "labels": [
     "Angry",
     "Fear",

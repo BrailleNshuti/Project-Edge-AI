@@ -1,26 +1,26 @@
 {
-  "tag": "v3_no_beard_aug",
+  "tag": "gpu_v3_no_beard_aug",
   "alpha": 0.35,
   "model_name": "age_gender_model",
   "beard_augment": false,
   "epochs": 15,
   "finetune_epochs": 10,
   "batch_size": 32,
-  "train_seconds": 1526.0829660892487,
-  "seconds_per_epoch": 61.04331864356995,
+  "train_seconds": 312.3393409252167,
+  "seconds_per_epoch": 12.493573637008668,
   "test_metrics": {
-    "age_loss": 114.81360626220703,
-    "age_mae": 7.732780933380127,
-    "gender_accuracy": 0.8726275563240051,
-    "gender_loss": 0.30825358629226685,
-    "loss": 0.5966983437538147,
-    "age_bucket_accuracy": 0.9240826655419654
+    "age_loss": 116.11626434326172,
+    "age_mae": 7.779411315917969,
+    "gender_accuracy": 0.8760017156600952,
+    "gender_loss": 0.2971215844154358,
+    "loss": 0.5941828489303589,
+    "age_bucket_accuracy": 0.9278785322648672
   },
   "final_val_metrics": {
-    "val_age_loss": 98.65631103515625,
-    "val_age_mae": 7.4362993240356445,
-    "val_gender_accuracy": 0.8729957938194275,
-    "val_gender_loss": 0.3065158724784851,
-    "val_loss": 0.5522446632385254
+    "val_age_loss": 105.05008697509766,
+    "val_age_mae": 7.491512775421143,
+    "val_gender_accuracy": 0.8578059077262878,
+    "val_gender_loss": 0.31494027376174927,
+    "val_loss": 0.5778945088386536
   }
 }

@@ -6,21 +6,21 @@
   "epochs": 15,
   "finetune_epochs": 10,
   "batch_size": 32,
-  "train_seconds": 281.77551317214966,
-  "seconds_per_epoch": 11.271020526885986,
+  "train_seconds": 307.95583510398865,
+  "seconds_per_epoch": 12.318233404159546,
   "test_metrics": {
-    "age_loss": 128.89495849609375,
-    "age_mae": 8.398926734924316,
-    "gender_accuracy": 0.8713622689247131,
-    "gender_loss": 0.3077012002468109,
-    "loss": 0.6329987645149231,
-    "age_bucket_accuracy": 0.9173344580345846
+    "age_loss": 119.09886932373047,
+    "age_mae": 7.895401954650879,
+    "gender_accuracy": 0.8679881691932678,
+    "gender_loss": 0.30725452303886414,
+    "loss": 0.6096474528312683,
+    "age_bucket_accuracy": 0.9245044285111768
   },
   "final_val_metrics": {
-    "val_age_loss": 109.88697814941406,
-    "val_age_mae": 7.765316009521484,
-    "val_gender_accuracy": 0.8616033792495728,
-    "val_gender_loss": 0.3311598598957062,
-    "val_loss": 0.6082010865211487
+    "val_age_loss": 101.29148864746094,
+    "val_age_mae": 7.357059955596924,
+    "val_gender_accuracy": 0.8565400838851929,
+    "val_gender_loss": 0.3315470516681671,
+    "val_loss": 0.5885781049728394
   }
 }
