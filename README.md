@@ -104,8 +104,8 @@ the report:
 **Part 1 (required CPU-vs-GPU comparison)**: reproduced the exact CPU run on GPU, same
 code and hyperparameters. Confirms training hardware alone doesn't change model quality
 (GPU numbers are statistically indistinguishable from CPU -- see report Section 3) --
-what it changes is training time: 2,905s -> 1,629s (1.8x) for age/gender, and a striking
-7,834s -> 626s (12.5x) for expression.
+what it changes is training time: 2,905s -> 317s (9.2x) for age/gender, and 7,834s ->
+671s (11.7x) for expression.
 
 **Part 2 (expression-accuracy push)**: trained a wider MobileNetV2 (α=1.0) and a compact
 CNN from scratch directly on FER2013 (the architecture that was too slow to train on CPU
