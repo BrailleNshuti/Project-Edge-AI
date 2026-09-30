@@ -12,6 +12,10 @@ phone or tablet." The web app runs entirely client-side in Safari -- no App Stor
 code signing, no Mac -- and all inference happens on-device, satisfying "deploy on the
 edge" the same way a native app would.
 
+| Home screen | Real analysis result |
+|---|---|
+| ![Home screen](web_app/screenshots/home_screen.jpg) | ![Analysis result](web_app/screenshots/analyze_result.jpg) |
+
 `android_app/` also exists, fully built and verified (compiles, runs, TFLite models
 included) from before I knew the platform would end up being an iPhone. I kept it as a
 working alternative in case a real Android device ever becomes available, but it is
