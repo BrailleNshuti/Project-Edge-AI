@@ -1,6 +1,6 @@
 # Edge AI Project -- Task 2: Age, Gender & Expression Recognition
 
-Built for the `DLBAIPEAI - Project Edge AI` course. This implements Task 2 from the
+Built for the ` - Project Edge AI` course. This implements Task 2 from the
 official brief: an application that recognizes age, gender, and expression on-device,
 plus everything needed to produce the two required report tables.
 
